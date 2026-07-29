@@ -1,91 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>LactooligyLAB</title>
 
 <style>
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
 body{
-background:#0f0f0f;
-color:white;
+    background:#0d0f0e;
+    color:white;
 }
 
-header{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
+/* القائمة */
+
+nav{
+    width:100%;
+    padding:22px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#0d0f0e;
+    position:fixed;
+    top:0;
+    z-index:10;
+    border-bottom:1px solid #333;
 }
 
-h1{
-font-size:70px;
-margin-bottom:20px;
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    letter-spacing:1px;
 }
 
-p{
-font-size:22px;
-color:#bbbbbb;
-max-width:700px;
-line-height:1.7;
-margin-bottom:40px;
+nav a{
+    color:#cccccc;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
 }
 
-button{
-padding:15px 35px;
-font-size:18px;
-border:none;
-border-radius:50px;
-cursor:pointer;
-background:white;
-color:black;
-transition:.3s;
+nav a:hover{
+    color:white;
 }
 
-button:hover{
-transform:scale(1.05);
+/* الصفحة الأولى */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 20px 50px;
 }
+
+.hero h1{
+    font-size:clamp(50px, 9vw, 110px);
+    letter-spacing:-3px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:700px;
+    color:#bdbdbd;
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:35px;
+}
+
+.button{
+    display:inline-block;
+    padding:15px 30px;
+    background:white;
+    color:black;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:bold;
+}
+
+/* About */
+
+.about{
+    padding:120px 10%;
+    background:#171a18;
+    text-align:center;
+}
+
+.about h2{
+    font-size:50px;
+    margin-bottom:25px;
+}
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    color:#bdbdbd;
+    font-size:19px;
+    line-height:1.8;
+}
+
+/* Projects */
+
+.projects{
+    padding:120px 8%;
+    text-align:center;
+}
+
+.projects h2{
+    font-size:50px;
+    margin-bottom:50px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:20px;
+}
+
+.card{
+    background:#181b19;
+    border:1px solid #303532;
+    border-radius:20px;
+    padding:40px 20px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#777;
+}
+
+.card h3{
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#aaaaaa;
+    line-height:1.6;
+}
+
+/* Contact */
+
+.contact{
+    padding:100px 20px;
+    background:#171a18;
+    text-align:center;
+}
+
+.contact h2{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.contact p{
+    color:#bdbdbd;
+    margin-bottom:25px;
+}
+
+.contact a{
+    color:white;
+    text-decoration:none;
+    border-bottom:1px solid white;
+}
+
+/* Footer */
+
+footer{
+    padding:30px;
+    text-align:center;
+    color:#777;
+    font-size:14px;
+}
+
+/* الموبايل */
+
+@media(max-width:800px){
+
+    nav{
+        padding:20px;
+    }
+
+    nav a{
+        display:none;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .about h2,
+    .projects h2,
+    .contact h2{
+        font-size:38px;
+    }
+
+}
+
 </style>
-
 </head>
 
 <body>
 
-<header>
+<!-- القائمة -->
+
+<nav>
+
+<div class="logo">LactooligyLAB</div>
+
+<div>
+
+<a href="#home">Home</a>
+
+<a href="#about">About</a>
+
+<a href="#projects">Projects</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+</nav>
+
+<!-- الصفحة الرئيسية -->
+
+<section class="hero" id="home">
 
 <h1>LactooligyLAB</h1>
 
 <p>
-Exploring the science of fermentation through research,
-innovation, and culinary creativity.
+Exploring the science of fermentation through microbiology,
+research, innovation, and culinary creativity.
 </p>
 
-<button>Explore Our Work</button>
+<a class="button" href="#projects">
+Explore Our Work
+</a>
 
-</header>
+</section>
+
+<!-- About -->
+
+<section class="about" id="about">
+
+<h2>About the Lab</h2>
+
+<p>
+LactooligyLAB is a creative fermentation platform focused on
+exploring microorganisms, fermentation processes, and innovative
+food development. We combine scientific curiosity with culinary
+creativity to develop ideas, products, and educational content.
+</p>
+
+</section>
+
+<!-- Projects -->
+
+<section class="projects" id="projects">
+
+<h2>Our Projects</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Koji</h3>
+
+<p>
+Exploring the power of enzymes and traditional Japanese fermentation.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Kombucha</h3>
+
+<p>
+Developing unique fermented tea flavors and natural beverages.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Miso</h3>
+
+<p>
+Studying long fermentation and the development of deep umami flavors.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Research</h3>
+
+<p>
+Experimenting with microorganisms and innovative fermentation methods.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Contact -->
+
+<section class="contact" id="contact">
+
+<h2>Connect With Us</h2>
+
+<p>
+Follow the journey of LactooligyLAB.
+</p>
+
+<a href="#">
+Instagram — @lactooligylab
+</a>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+
+© 2026 LactooligyLAB. All rights reserved.
+
+</footer>
 
 </body>
-<section style="padding:100px 20px;background:#181818;text-align:center;">
 
-<h2 style="font-size:40px;margin-bottom:20px;">
-About LactooligyLAB
-</h2>
-
-<p style="max-width:800px;margin:auto;font-size:20px;line-height:1.8;color:#cccccc;">
-LactooligyLAB is a creative fermentation lab dedicated to exploring
-the science of microbiology, fermentation, and innovative food
-development. We combine culinary creativity with scientific research
-to create unique products and educational content.
-</p>
-
-</section> </html>
+</html>
