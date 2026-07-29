@@ -298,3 +298,9 @@ height:200px;
 }
 
 }
+.unavailable{
+background:#777;
+color:#fff;
+cursor:not-allowed;
+pointer-events:none;
+}
