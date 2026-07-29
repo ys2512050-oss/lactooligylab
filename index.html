@@ -1,167 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>LactooligyLAB</title>
 
-<meta name="description" content="LactooligyLAB - Fermentation Research & Education">
-<meta name="theme-color" content="#0d0f0e">
+<meta name="description" content="Fermentation Research Laboratory">
 
-<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="icon" href="images/logo.png">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+scroll-behavior:smooth;
 }
 
-html{
-    scroll-behavior:smooth;
+body{
+background:#0d0f0e;
+color:white;
+overflow-x:hidden;
 }
 
-<body>
+img{
+max-width:100%;
+display:block;
+}
 
-<nav>
+a{
+text-decoration:none;
+color:white;
+}
 
-<div class="logo">
-<a href="index.html">
-<img src="images/logo.png" alt="LactooligyLAB Logo">
-</a>
-</div>
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:#111;
+border-bottom:1px solid #333;
+z-index:1000;
+}
 
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+.logo img{
+height:55px;
+}
 
-</nav>
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
 
-<section class="hero" id="home">
+nav ul li a{
+font-weight:bold;
+transition:.3s;
+}
 
-<h1>LactooligyLAB</h1>
+nav ul li a:hover{
+color:#90ee90;
+}
 
-<p>
-Exploring the science of fermentation through research,
-education, and innovation. From Koji to Kombucha, we study
-microorganisms to create better fermented foods.
-</p>
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:120px 20px 40px;
+}
 
-<a href="#projects" class="button">
-Explore Our Projects
-</a>
+.hero h1{
+font-size:clamp(42px,8vw,80px);
+margin-bottom:20px;
+}
 
-</section>
+.hero p{
+max-width:750px;
+line-height:1.8;
+color:#bbbbbb;
+margin-bottom:35px;
+}
 
-<section class="projects" id="projects">
+.button{
+background:white;
+color:black;
+padding:15px 35px;
+border-radius:50px;
+font-weight:bold;
+display:inline-block;
+transition:.3s;
+}
 
-<h2>Our Projects</h2>
+.button:hover{
+transform:translateY(-5px);
+}
 
-<div class="cards">
+.about,
+.projects,
+.contact{
+padding:90px 8%;
+}
 
-<a href="koji.html" style="text-decoration:none;color:white;">
-<div class="card">
-<img src="images/koji.jpg" alt="Koji">
-<h3>Koji</h3>
-<p>Exploring traditional Japanese fermentation and enzyme science.</p>
-</div>
-</a>
+.about{
+background:#171a18;
+text-align:center;
+}
 
-<a href="kombucha.html" style="text-decoration:none;color:white;">
-<div class="card">
+.about h2,
+.projects h2,
+.contact h2{
+font-size:48px;
+margin-bottom:30px;
+}
 
-<img src="images/kombucha.jpg" alt="Kombucha">
+.about p{
+max-width:850px;
+margin:auto;
+line-height:1.9;
+color:#cfcfcf;
+}
 
-<h3>Kombucha</h3>
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+margin-top:50px;
+}
 
-<p>
-Creating unique fermented tea with natural flavors.
-</p>
+.card{
+background:#181b19;
+border:1px solid #333;
+border-radius:18px;
+overflow:hidden;
+transition:.3s;
+}
 
-</div>
-</a>
+.card:hover{
+transform:translateY(-10px);
+border-color:#90ee90;
+}
 
-<a href="miso.html" style="text-decoration:none;color:white;">
-<div class="card">
+.card img{
+width:100%;
+height:230px;
+object-fit:cover;
+}
 
-<img src="images/miso.jpg" alt="Miso">
+.card h3{
+margin:20px;
+font-size:28px;
+}
 
-<h3>Miso</h3>
+.card p{
+margin:0 20px 25px;
+line-height:1.7;
+color:#bbb;
+}
 
-<a href="research.html" style="text-decoration:none;color:white;">
-<div class="card">
+.contact{
+background:#171a18;
+text-align:center;
+}
 
-<img src="images/research.jpg" alt="Research">
+.contact p{
+margin-bottom:25px;
+color:#bbb;
+}
 
-<h3>Research</h3>
+footer{
+padding:30px;
+text-align:center;
+color:#888;
+}
 
-<p>
-Studying microorganisms and developing innovative fermentation techniques.
-</p>
+@media(max-width:768px){
 
-</div>
-</a>
+nav{
+padding:15px 20px;
+}
 
-</section><section class="contact" id="contact">
+nav ul{
+display:none;
+}
 
-<h2>Connect With Us</h2>
+.logo img{
+height:45px;
+}
 
-<p>
-Follow the journey of LactooligyLAB and stay updated with our latest fermentation experiments.
-</p>
+.about,
+.projects,
+.contact{
+padding:70px 20px;
+}
 
-<a href="https://instagram.com/lactooligylab" target="_blank">
-Instagram — @lactooligylab
-</a>
+.about h2,
+.projects h2,
+.contact h2{
+font-size:36px;
+}
 
-</section>
-
-<footer>
-
-<p>
-© 2026 LactooligyLAB. All Rights Reserved.
-</p>
-
-</footer>
-
-<script>
-
-const cards = document.querySelectorAll('.card');
-
-const observer = new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.style.opacity="1";
-
-entry.target.style.transform="translateY(0)";
+.hero h1{
+font-size:50px;
+}
 
 }
 
-});
+</style>
 
-});
-
-cards.forEach(card=>{
-
-card.style.opacity="0";
-
-card.style.transform="translateY(40px)";
-
-card.style.transition="all .6s ease";
-
-observer.observe(card);
-
-});
-
-</script>
-
-</body>
-
-</html>
+</head>
