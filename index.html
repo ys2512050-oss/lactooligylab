@@ -255,7 +255,12 @@ max-width:700px;
 margin:15px auto 45px;
 line-height:1.8;
 text-align:center;
-}}@media(max-width:768px){
+.menu-btn{
+display:none;
+font-size:30px;
+cursor:pointer;
+color:white;
+}@media(max-width:768px){
 .button{
 display:inline-block;
 padding:16px 30px;
@@ -272,8 +277,28 @@ display:none;
 .logo img{
 height:60px;
 }
+.menu-btn{
+display:block;
+}
 
+nav ul{
+display:none;
+position:absolute;
+top:80px;
+right:20px;
+background:#181b19;
+padding:20px;
+border-radius:12px;
+flex-direction:column;
+gap:15px;
+}
+
+nav ul.active{
+display:flex;
+}
+.hero{
 padding:110px 16px 50px;
+}
 .about,
 .projects,
 .contact{
