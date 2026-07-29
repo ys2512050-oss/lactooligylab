@@ -38,10 +38,20 @@ border-bottom:1px solid #333;
 z-index:1000;
 }
 
-.logo img{
-height:55px;
+.logo{
+    display:flex;
+    align-items:center;
 }
 
+.logo img{
+    height:55px;
+    width:auto;
+    transition:.3s;
+}
+
+.logo img:hover{
+    transform:scale(1.08);
+}
 nav ul{
 display:flex;
 list-style:none;
