@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Order | LactooligyLAB</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+background:#0d0f0e;
+color:white;
+font-family:Arial,sans-serif;
+padding:40px;
+}
+
+form{
+max-width:500px;
+margin:auto;
+background:#181818;
+padding:30px;
+border-radius:20px;
+}
+
+input,select,textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:10px;
+border:none;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:15px;
+background:#90ee90;
+border:none;
+border-radius:30px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 style="text-align:center;">Order Form</h1>
+
+<form id="orderForm">
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<input type="tel" id="phone" placeholder="Phone Number" required>
+
+<select id="product">
+
+<option>Koji Starter</option>
+
+<option>Kombucha SCOBY</option>
+
+<option>Miso Starter</option>
+
+<option>Shio Koji</option>
+
+</select>
+
+<input type="number" id="qty" placeholder="Quantity" min="1" value="1">
+
+<textarea id="notes" placeholder="Notes"></textarea>
+
+<button type="submit">
+Send Order
+</button>
+
+</form>
+
+<script>
+
+document.getElementById("orderForm").onsubmit=function(e){
+
+e.preventDefault();
+
+let name=document.getElementById("name").value;
+
+let phone=document.getElementById("phone").value;
+
+let product=document.getElementById("product").value;
+
+let qty=document.getElementById("qty").value;
+
+let notes=document.getElementById("notes").value;
+
+let text=`Hello LactooligyLAB!
+
+Name: ${name}
+
+Phone: ${phone}
+
+Product: ${product}
+
+Quantity: ${qty}
+
+Notes: ${notes}`;
+
+window.open("https://wa.me/201124760097?text="+encodeURIComponent(text));
+
+}
+
+</script>
+
+</body>
+</html>
