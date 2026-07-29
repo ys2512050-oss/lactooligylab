@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -18,12 +19,15 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
+}
+
+html{
 scroll-behavior:smooth;
 }
 
 body{
 background:#0d0f0e;
-color:white;
+color:#fff;
 overflow-x:hidden;
 }
 
@@ -40,30 +44,37 @@ color:white;
 nav{
 position:fixed;
 top:0;
+left:0;
 width:100%;
-padding:15px 20px;
+height:80px;
+padding:0 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
 background:#111;
+z-index:1000;
 }
 
 .logo img{
-height:70px;
-width:auto;
-display:block;
+height:60px;
 }
 
-nav ul{
-display:flex;
-list-style:none;
-gap:30px;
+.menu-btn{
+display:none;
+font-size:34px;
+cursor:pointer;
+user-select:none;
 }
 
 nav ul{
 display:flex;
 list-style:none;
 gap:35px;
+}
+
+nav ul li a{
+transition:.3s;
+font-weight:bold;
 }
 
 nav ul li a:hover{
@@ -77,39 +88,42 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:120px 20px 40px;
+padding:120px 20px 60px;
 }
 
 .hero h1{
-font-size:clamp(42px,8vw,80px);
+font-size:clamp(45px,8vw,85px);
 margin-bottom:20px;
 }
 
 .hero p{
-max-width:750px;
-line-height:1.8;
-color:#bbbbbb;
-margin-bottom:35px;
+max-width:800px;
+line-height:1.9;
+color:#bbb;
+margin-bottom:40px;
+font-size:18px;
 }
 
 .button{
-background:white;
-color:black;
+display:inline-block;
+background:#90ee90;
+color:#111;
 padding:15px 35px;
 border-radius:50px;
 font-weight:bold;
-display:inline-block;
 transition:.3s;
 }
 
 .button:hover{
 transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(144,238,144,.3);
 }
 
 .about,
+.highlights,
 .projects,
 .contact{
-padding:90px 8%;
+padding:100px 8%;
 }
 
 .about{
@@ -118,120 +132,45 @@ text-align:center;
 }
 
 .about h2,
+.highlights h2,
 .projects h2,
 .contact h2{
-font-size:48px;
+font-size:46px;
 margin-bottom:30px;
 }
 
-.about p{
+.about p,
+.contact p{
 max-width:850px;
 margin:auto;
 line-height:1.9;
-color:#cfcfcf;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-margin-top:50px;
-}
-
-.card{cursor:pointer;
-background:#181b19;
-border:1px solid #333;
-border-radius:18px;
-overflow:hidden;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
-border-color:#90ee90;
-box-shadow:0 10px 25px rgba(144,238,144,.15);
-}
-
-.card img{
-width:100%;
-height:230px;
-object-fit:cover;
-}
-
-.card h3{
-margin:20px;
-font-size:28px;
-}
-
-.card p{
-margin:0 20px 25px;
-line-height:1.7;
 color:#bbb;
 }
-
-.contact{
-background:#171a18;
-text-align:center;
-}
-
-.contact p{
-margin-bottom:25px;
-color:#bbb;
-}
-
-footer{
-padding:30px;
-text-align:center;
-color:#888;
-}
-.social-links{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-margin-top:30px;
-}
-
-.social-links a{
-display:inline-block;
-padding:14px 24px;
-border:1px solid #444;
-border-radius:50px;
-background:#181b19;
-color:white;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
-}
-
-.social-links a:hover{
-background:#90ee90;
-color:#111;
-border-color:#90ee90;
-transform:translateY(-3px);
-}
-.highlights{
-padding:100px 8%;
+  .highlights{
 background:#111;
 text-align:center;
 }
 
-.highlights h2{
-font-size:48px;
-margin-bottom:50px;
+.highlights-text{
+max-width:700px;
+margin:0 auto 50px;
+color:#bbb;
+line-height:1.8;
+font-size:18px;
 }
 
 .highlight-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
+margin-top:40px;
 }
 
 .highlight-box{
 background:#181b19;
-padding:30px;
-border-radius:20px;
 border:1px solid #333;
+border-radius:20px;
+padding:30px;
 transition:.3s;
 }
 
@@ -248,73 +187,130 @@ font-size:24px;
 
 .highlight-box p{
 color:#bbb;
+line-height:1.8;
+}
+
+.projects{
+background:#0d0f0e;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+.card{
+background:#181b19;
+border:1px solid #333;
+border-radius:18px;
+overflow:hidden;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:#90ee90;
+box-shadow:0 10px 25px rgba(144,238,144,.15);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card h3{
+margin:20px;
+font-size:28px;
+}
+
+.card p{
+margin:0 20px 25px;
+color:#bbb;
 line-height:1.7;
 }
 
-.highlights-text{
-color:#bbb;
-font-size:18px;
-max-width:700px;
-margin:15px auto 45px;
-line-height:1.8;
+.contact{
+background:#171a18;
 text-align:center;
 }
 
-.menu-btn{
-display:none;
-font-size:30px;
-cursor:pointer;
-color:white;
+.social-links{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:30px;
 }
+
+.social-links a{
+padding:14px 24px;
+border-radius:50px;
+border:1px solid #444;
+transition:.3s;
+}
+
+.social-links a:hover{
+background:#90ee90;
+color:#111;
+}
+
+footer{
+padding:30px;
+text-align:center;
+color:#888;
 }@media(max-width:768px){
-.button{
-display:inline-block;
-padding:16px 30px;
-font-size:17px;
-}
-nav{
-padding:15px 20px;
-}
 
-
-
-nav ul.active{
-display:flex !important;
-}
-
-.logo img{
-height:60px;
-}
 .menu-btn{
 display:block;
+font-size:34px;
+}
+
+nav{
+padding:0 20px;
+height:75px;
 }
 
 nav ul{
 display:none;
 position:absolute;
-top:80px;
-right:20px;
-background:#181b19;
-padding:20px;
-border-radius:12px;
+top:75px;
+left:0;
+width:100%;
+background:#111;
 flex-direction:column;
-gap:15px;
+text-align:center;
+padding:20px 0;
+gap:20px;
 }
 
 nav ul.active{
 display:flex;
 }
+
 .hero{
-padding:110px 16px 50px;
+padding:120px 20px 60px;
 }
+
+.hero h1{
+font-size:48px;
+}
+
+.hero p{
+font-size:16px;
+}
+
 .about,
+.highlights,
 .projects,
 .contact{
-padding:45px 12px;
+padding:70px 20px;
 }
+
 .card img{
-height:180px;
-object-fit:cover;
+height:190px;
 }
 
 }
@@ -322,23 +318,23 @@ object-fit:cover;
 </style>
 
 </head>
-  <body>
+
+<body>
 
 <nav>
 
 <div class="logo">
 <a href="index.html">
-<img src="images/logo.png" alt="LactooligyLAB Logo">
+<img src="images/logo.png" alt="LactooligyLAB">
 </a>
 </div>
 
-<div class="menu-btn" onclick="toggleMenu()">
-☰
-</div>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-<ul>
+<ul id="menu">
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
+<li><a href="#highlights">Highlights</a></li>
 <li><a href="#projects">Projects</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
@@ -351,9 +347,7 @@ object-fit:cover;
 
 <p>
 Exploring the science of fermentation through research,
-education, and innovation.
-We study Koji, Kombucha, Miso, and other fermented foods
-to bridge science and culinary creativity.
+education and innovation.
 </p>
 
 <a href="#projects" class="button">
@@ -361,13 +355,25 @@ Explore Our Projects
 </a>
 
 </section>
-<section class="highlights">
 
+<section class="about" id="about">
+
+<h2>About Us</h2>
+
+<p>
+LactooligyLAB is dedicated to fermentation science,
+microbiology and food innovation.
+We explore Koji, Kombucha, Miso and many other traditional
+fermentation techniques through research and education.
+</p>
+
+</section><section class="highlights" id="highlights">
+
+<h2>🔬 Research Highlights</h2>
 
 <p class="highlights-text">
 Exploring the science behind fermentation and microbial research.
 </p>
-<h2>Research Highlights</h2>
 
 <div class="highlight-grid">
 
@@ -394,19 +400,8 @@ Exploring the science behind fermentation and microbial research.
 </div>
 
 </section>
-<section class="about" id="about">
 
-<h2>About LactooligyLAB</h2>
-
-<p>
-LactooligyLAB is an independent fermentation laboratory
-focused on research, education, and innovation.
-Our mission is to explore microorganisms, improve
-fermentation techniques, and share scientific knowledge
-with food enthusiasts around the world.
-</p>
-
-</section><section class="projects" id="projects">
+<section class="projects" id="projects">
 
 <h2>Our Projects</h2>
 
@@ -416,9 +411,7 @@ with food enthusiasts around the world.
 <div class="card">
 <img src="images/koji.jpg" alt="Koji">
 <h3>Koji</h3>
-<p>
-Exploring traditional Japanese fermentation and enzyme science.
-</p>
+<p>Traditional Japanese fermentation and enzyme science.</p>
 </div>
 </a>
 
@@ -426,9 +419,7 @@ Exploring traditional Japanese fermentation and enzyme science.
 <div class="card">
 <img src="images/kombucha.jpg" alt="Kombucha">
 <h3>Kombucha</h3>
-<p>
-Creating unique fermented tea with natural flavors.
-</p>
+<p>Fermented tea and microbial culture research.</p>
 </div>
 </a>
 
@@ -436,9 +427,7 @@ Creating unique fermented tea with natural flavors.
 <div class="card">
 <img src="images/miso.jpg" alt="Miso">
 <h3>Miso</h3>
-<p>
-Researching long-term fermentation and deep umami development.
-</p>
+<p>Long-term fermentation and umami development.</p>
 </div>
 </a>
 
@@ -446,35 +435,29 @@ Researching long-term fermentation and deep umami development.
 <div class="card">
 <img src="images/research.jpg" alt="Research">
 <h3>Research</h3>
-<p>
-Studying microorganisms and developing innovative fermentation techniques.
-</p>
+<p>Scientific studies on microorganisms and food fermentation.</p>
 </div>
 </a>
 
 </div>
+
+</section>
 
 <section class="contact" id="contact">
 
 <h2>Connect With Us</h2>
 
 <p>
-Follow LactooligyLAB and stay updated with our latest fermentation research.
+Follow LactooligyLAB for our latest research and experiments.
 </p>
 
 <div class="social-links">
 
-<a href="https://instagram.com/lactooligylab" target="_blank">
-📷 Instagram
-</a>
+<a href="https://instagram.com/lactooligylab" target="_blank">📷 Instagram</a>
 
-<a href="mailto:your@email.com">
-📧 Email
-</a>
+<a href="mailto:your@email.com">📧 Email</a>
 
-<a href="https://github.com/YS2512050-OSS" target="_blank">
-💻 GitHub
-</a>
+<a href="https://github.com/YS2512050-OSS" target="_blank">💻 GitHub</a>
 
 </div>
 
@@ -482,9 +465,7 @@ Follow LactooligyLAB and stay updated with our latest fermentation research.
 
 <footer>
 
-<p>
-© 2026 LactooligyLAB. All Rights Reserved.
-</p>
+<p>© 2026 LactooligyLAB. All Rights Reserved.</p>
 
 </footer>
 
@@ -493,33 +474,26 @@ Follow LactooligyLAB and stay updated with our latest fermentation research.
 const cards=document.querySelectorAll(".card");
 
 const observer=new IntersectionObserver((entries)=>{
-
 entries.forEach(entry=>{
-
 if(entry.isIntersecting){
-
 entry.target.style.opacity="1";
 entry.target.style.transform="translateY(0)";
-
 }
-
 });
-
 });
 
 cards.forEach(card=>{
 card.style.opacity="0";
 card.style.transform="translateY(40px)";
-card.style.transition="0.6s";
+card.style.transition=".6s";
 observer.observe(card);
 });
 
 function toggleMenu(){
-    alert("Menu works");
-    document.querySelector("nav ul").classList.toggle("active");
+document.getElementById("menu").classList.toggle("active");
 }
 
-
 </script>
-  </body>
+
+</body>
 </html>
