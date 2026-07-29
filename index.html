@@ -271,7 +271,19 @@ padding:15px 20px;
 }
 
 nav ul{
-display:none;
+display:none !important;
+flex-direction:column;
+position:absolute;
+top:80px;
+right:20px;
+background:#181b19;
+padding:20px;
+border-radius:12px;
+gap:15px;
+}
+
+nav ul.active{
+display:flex !important;
 }
 
 .logo img{
@@ -509,7 +521,10 @@ function toggleMenu(){
 document.querySelector("nav ul").classList.toggle("active");
 }
 
+<script>
+function toggleMenu(){
+    document.querySelector("nav ul").classList.toggle("active");
+}
 </script>
-
-</body>
+  </body>
 </html>
