@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>LactooligyLAB</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
@@ -21,78 +19,70 @@ body{
     color:white;
 }
 
-/* القائمة */
-
 nav{
+    position:fixed;
+    top:0;
     width:100%;
-    padding:22px 8%;
+    padding:20px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:#0d0f0e;
-    position:fixed;
-    top:0;
-    z-index:10;
+    background:#111;
     border-bottom:1px solid #333;
 }
 
 .logo{
     font-size:24px;
     font-weight:bold;
-    letter-spacing:1px;
 }
 
-nav a{
-    color:#cccccc;
-    text-decoration:none;
-    margin-left:20px;
-    font-size:14px;
+nav ul{
+    display:flex;
+    list-style:none;
 }
 
-nav a:hover{
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
     color:white;
+    text-decoration:none;
 }
-
-/* الصفحة الأولى */
 
 .hero{
-    min-height:100vh;
+    height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:100px 20px 50px;
+    padding:20px;
 }
 
 .hero h1{
-    font-size:clamp(50px, 9vw, 110px);
-    letter-spacing:-3px;
+    font-size:80px;
     margin-bottom:20px;
 }
 
 .hero p{
     max-width:700px;
-    color:#bdbdbd;
-    font-size:20px;
-    line-height:1.7;
-    margin-bottom:35px;
+    color:#bbb;
+    line-height:1.8;
+    margin-bottom:30px;
 }
 
 .button{
-    display:inline-block;
-    padding:15px 30px;
     background:white;
     color:black;
-    text-decoration:none;
+    padding:15px 35px;
     border-radius:50px;
+    text-decoration:none;
     font-weight:bold;
 }
 
-/* About */
-
 .about{
-    padding:120px 10%;
+    padding:100px 10%;
     background:#171a18;
     text-align:center;
 }
@@ -105,15 +95,12 @@ nav a:hover{
 .about p{
     max-width:800px;
     margin:auto;
-    color:#bdbdbd;
-    font-size:19px;
+    color:#bbb;
     line-height:1.8;
 }
 
-/* Projects */
-
 .projects{
-    padding:120px 8%;
+    padding:100px 8%;
     text-align:center;
 }
 
@@ -124,38 +111,33 @@ nav a:hover{
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(4, 1fr);
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
 }
 
 .card{
     background:#181b19;
-    border:1px solid #303532;
+    border:1px solid #333;
+    padding:35px;
     border-radius:20px;
-    padding:40px 20px;
-    transition:0.3s;
+    transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
-    border-color:#777;
+    transform:translateY(-10px);
 }
 
 .card h3{
-    font-size:25px;
     margin-bottom:15px;
 }
 
 .card p{
-    color:#aaaaaa;
-    line-height:1.6;
+    color:#aaa;
 }
 
-/* Contact */
-
 .contact{
-    padding:100px 20px;
     background:#171a18;
+    padding:100px 20px;
     text-align:center;
 }
 
@@ -165,75 +147,55 @@ nav a:hover{
 }
 
 .contact p{
-    color:#bdbdbd;
-    margin-bottom:25px;
+    color:#bbb;
+    margin-bottom:20px;
 }
 
 .contact a{
     color:white;
     text-decoration:none;
-    border-bottom:1px solid white;
 }
-
-/* Footer */
 
 footer{
     padding:30px;
     text-align:center;
     color:#777;
-    font-size:14px;
 }
 
-/* الموبايل */
+@media(max-width:768px){
 
-@media(max-width:800px){
-
-    nav{
-        padding:20px;
-    }
-
-    nav a{
-        display:none;
-    }
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-    .about h2,
-    .projects h2,
-    .contact h2{
-        font-size:38px;
-    }
-
+.hero h1{
+font-size:50px;
 }
 
+nav ul{
+display:none;
+}
+
+.about h2,
+.projects h2,
+.contact h2{
+font-size:38px;
+}
+
+}
 </style>
+
 </head>
 
 <body>
 
-<!-- القائمة -->
-
 <nav>
-
 <div class="logo">LactooligyLAB</div>
 
-<div>
-
-<a href="#home">Home</a>
-
-<a href="#about">About</a>
-
-<a href="#projects">Projects</a>
-
-<a href="#contact">Contact</a>
-
-</div>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
 </nav>
-
-<!-- الصفحة الرئيسية -->
 
 <section class="hero" id="home">
 
@@ -241,7 +203,7 @@ footer{
 
 <p>
 Exploring the science of fermentation through microbiology,
-research, innovation, and culinary creativity.
+innovation, research, and culinary creativity.
 </p>
 
 <a class="button" href="#projects">
@@ -250,22 +212,17 @@ Explore Our Work
 
 </section>
 
-<!-- About -->
-
 <section class="about" id="about">
 
 <h2>About the Lab</h2>
 
 <p>
 LactooligyLAB is a creative fermentation platform focused on
-exploring microorganisms, fermentation processes, and innovative
-food development. We combine scientific curiosity with culinary
-creativity to develop ideas, products, and educational content.
+microbiology, fermentation science, food innovation,
+education, and product development.
 </p>
 
 </section>
-
-<!-- Projects -->
 
 <section class="projects" id="projects">
 
@@ -274,154 +231,44 @@ creativity to develop ideas, products, and educational content.
 <div class="cards">
 
 <div class="card">
-
 <h3>Koji</h3>
-
-<p>
-Exploring the power of enzymes and traditional Japanese fermentation.
-</p>
-
+<p>Exploring traditional Japanese fermentation and enzyme science.</p>
 </div>
 
 <div class="card">
-
 <h3>Kombucha</h3>
-
-<p>
-Developing unique fermented tea flavors and natural beverages.
-</p>
-
+<p>Creating unique fermented tea with natural flavors.</p>
 </div>
 
 <div class="card">
-
 <h3>Miso</h3>
-
-<p>
-Studying long fermentation and the development of deep umami flavors.
-</p>
-
+<p>Researching long-term fermentation and deep umami development.</p>
 </div>
 
 <div class="card">
-
 <h3>Research</h3>
-
-<p>
-Experimenting with microorganisms and innovative fermentation methods.
-</p>
-
+<p>Studying microorganisms and developing innovative fermentation techniques.</p>
 </div>
 
 </div>
 
 </section>
-
-<!-- Contact -->
 
 <section class="contact" id="contact">
 
 <h2>Connect With Us</h2>
 
-<p>
-Follow the journey of LactooligyLAB.
-</p>
+<p>Follow the journey of LactooligyLAB.</p>
 
-<a href="#">
+<a href="https://instagram.com/lactooligylab" target="_blank">
 Instagram — @lactooligylab
 </a>
 
 </section>
 
-<!-- Footer -->
-
 <footer>
-
-© 2026 LactooligyLAB. All rights reserved.
-
+©️ 2026 LactooligyLAB. All rights reserved.
 </footer>
-<section>
-  <h2>About LactooligyLAB</h2>
-  <p>
-    LactooligyLAB explores fermentation, microbiology,
-    and innovative food development.
-  </p>
-</section> <section style="padding:100px 20px; background:#111; text-align:center;">
 
-<h2 style="font-size:45px; margin-bottom:20px;">
-Our Projects
-</h2>
-
-<p style="color:#aaa; font-size:18px; margin-bottom:50px;">
-Exploring fermentation through science, creativity, and innovation.
-</p>
-
-<div style="
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-max-width:1000px;
-margin:auto;
-">
-
-<div style="background:#1c1c1c; padding:35px; width:220px; border-radius:20px;">
-<h3 style="font-size:28px;">Koji</h3>
-<p style="font-size:16px; color:#aaa;">Exploring enzymes, grains, and umami.</p>
-</div>
-
-<div style="background:#1c1c1c; padding:35px; width:220px; border-radius:20px;">
-<h3 style="font-size:28px;">Kombucha</h3>
-<p style="font-size:16px; color:#aaa;">Fermented tea and microbial culture.</p>
-</div>
-
-<div style="background:#1c1c1c; padding:35px; width:220px; border-radius:20px;">
-<h3 style="font-size:28px;">Miso</h3>
-<p style="font-size:16px; color:#aaa;">Traditional fermentation with modern ideas.</p>
-</div>
-
-<div style="background:#1c1c1c; padding:35px; width:220px; border-radius:20px;">
-<h3 style="font-size:28px;">Research</h3>
-<p style="font-size:16px; color:#aaa;">Experiments in food microbiology.</p>
-</div>
-
-</div>
-
-</section>
-<section style="padding:80px 20px; background:#111; text-align:center;">
-
-<h2 style="font-size:42px; margin-bottom:15px;">
-Our Work
-</h2>
-
-<p style="color:#aaa; font-size:18px; margin-bottom:40px;">
-Exploring fermentation through science, creativity, and innovation.
-</p>
-
-<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
-
-<div style="background:#1d1d1d; width:220px; padding:30px; border-radius:20px;">
-<h3>Koji</h3>
-<p style="color:#aaa;">Enzymes, grains, and umami.</p>
-</div>
-
-<div style="background:#1d1d1d; width:220px; padding:30px; border-radius:20px;">
-<h3>Kombucha</h3>
-<p style="color:#aaa;">Fermented tea and living cultures.</p>
-</div>
-
-<div style="background:#1d1d1d; width:220px; padding:30px; border-radius:20px;">
-<h3>Miso</h3>
-<p style="color:#aaa;">Traditional fermentation and flavor.</p>
-</div>
-
-<div style="background:#1d1d1d; width:220px; padding:30px; border-radius:20px;">
-<h3>Research</h3>
-<p style="color:#aaa;">Food microbiology and experimentation.</p>
-</div>
-
-</div>
-
-</section></body>
-
+</body>
 </html>
